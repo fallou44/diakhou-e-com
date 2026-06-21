@@ -747,7 +747,7 @@ export default function App() {
 
       {/* Trust Badges - Brand reassurance cards */}
       <section className="bg-white border-y border-rose-100/80 py-12 px-4 shadow-xs mt-12" id="trust-badges-bar">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="space-y-2">
             <div className="w-12 h-12 bg-rose-100/70 text-rose-700 rounded-full flex items-center justify-center mx-auto">
               <Truck className="w-6 h-6" />
