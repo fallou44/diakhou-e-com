@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShoppingBag, Heart, Gem, Search, ShieldCheck, Menu, X } from "lucide-react";
+import { ShoppingBag, Heart, Gem, Search, ShieldCheck, Menu, X, User } from "lucide-react";
 import { CartItem } from "../types";
 import { Link } from "react-router-dom";
 
@@ -95,8 +95,15 @@ export default function Navbar({
               />
             </div>
 
-            {/* Icon Controls */}
-            <div className="flex items-center gap-1 sm:gap-3 shrink-0">
+            {/* Right Section: Icon Controls */}
+            <div className="flex items-center justify-end gap-1 sm:gap-3 shrink-0">
+              {/* User Account */}
+              <Link
+                to="/connexion"
+                className="p-2 sm:p-2.5 text-rose-950 hover:text-rose-600 rounded-full hover:bg-rose-50 transition-colors relative cursor-pointer hidden sm:block"
+              >
+                <User className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.5]" />
+              </Link>
               
               {/* Wishlist */}
               <Link

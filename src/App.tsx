@@ -41,6 +41,7 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
+import Auth from "./pages/Auth";
 import InstagramFeed from "./components/InstagramFeed";
 import CookieBanner from "./components/CookieBanner";
 
@@ -777,6 +778,7 @@ export default function App() {
         <Route path="/favoris" element={<Wishlist wishlist={wishlist} toggleWishlist={toggleWishlist} />} />
         <Route path="/boutique" element={<Shop />} />
         <Route path="/produit/:id" element={<ProductDetails cart={cart} setCart={setCart} />} />
+        <Route path="/connexion" element={<Auth />} />
         <Route path="/a-propos" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
