@@ -104,7 +104,7 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
 
   return (
     <section 
-      className="relative overflow-hidden bg-gradient-to-b from-[#FFF5F7] via-white to-white py-6 md:py-12 px-4 sm:px-6 lg:px-8" 
+      className="relative overflow-hidden bg-gradient-to-b from-[#FFF5F7] via-white to-white py-4 md:py-6 px-4 sm:px-6 lg:px-8" 
       id="diakhou-hero-slider"
       onMouseEnter={stopTimer}
       onMouseLeave={startTimer}
@@ -114,7 +114,7 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
       <div className="absolute bottom-0 right-0 w-[35rem] h-[35rem] bg-amber-50/25 rounded-full blur-3xl pointer-events-none translate-x-1/4 translate-y-1/4" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="bg-white rounded-[40px] border border-rose-100 shadow-2xl overflow-hidden relative min-h-[580px] lg:min-h-[640px] flex items-stretch">
+        <div className="bg-white rounded-[40px] border border-rose-100 shadow-2xl overflow-hidden relative min-h-[460px] lg:min-h-[520px] flex items-stretch">
           
           {/* Slides Carousel Wrapper */}
           <AnimatePresence mode="wait">
@@ -132,13 +132,13 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
                 >
                   
                   {/* Left Column: Rich editorial content */}
-                  <div className="lg:col-span-7 p-6 sm:p-10 lg:p-14 flex flex-col justify-between relative bg-gradient-to-br from-[#FFFBFB] via-white to-white">
+                  <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between relative bg-gradient-to-br from-[#FFFBFB] via-white to-white">
                     {/* Tiny floral-styled watermark pattern behind text */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-pink-50/20 font-serif font-bold text-[15rem] leading-none pointer-events-none select-none">
                       D
                     </div>
                     
-                    <div className="relative z-10 space-y-6">
+                    <div className="relative z-10 space-y-4">
                       {/* Top badge */}
                       <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-rose-50 border border-rose-100 text-rose-900 rounded-full text-[10px] font-black tracking-widest uppercase">
                         {slide.badgeIcon}
@@ -173,7 +173,7 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
                     </div>
 
                     {/* Bottom Action Section */}
-                    <div className="mt-8 pt-6 border-t border-rose-100 relative z-10">
+                    <div className="mt-6 pt-4 border-t border-rose-100 relative z-10">
                       <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
                         {/* Primary Explore button */}
                         <button
@@ -249,7 +249,7 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
           </button>
 
           {/* Autoplay Pause/Play toggle and Carousel Indicator bars */}
-          <div className="absolute bottom-6 left-10 z-20 flex items-center gap-4 bg-rose-950/90 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4 bg-rose-950/90 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
             
             {/* Play Pause button */}
             <button
