@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, CheckCircle2, Star, Percent, ShieldCheck, Heart } from "lucide-react";
+import { Gem, CheckCircle2, Star, Percent, ShieldCheck, Heart } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface CategoryBannerProps {
@@ -123,7 +123,7 @@ export default function CategoryBanner({ activeCategory, count }: CategoryBanner
           
           {/* Overlay Tag */}
           <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-pink-100 text-[10px] font-black tracking-widest text-[#E91E63] uppercase flex items-center gap-1 shadow-md">
-            <Sparkles className="w-3.5 h-3.5 text-pink-500 fill-pink-100 animate-pulse" />
+            <Gem className="w-3.5 h-3.5 text-pink-500 fill-pink-100 animate-pulse" />
             <span>EXCLUSIVITÉ DIAKHOU</span>
           </div>
 

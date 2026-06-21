@@ -44,10 +44,6 @@ import Shop from "./pages/Shop";
 import ProductDetails from "./pages/ProductDetails";
 import InstagramFeed from "./components/InstagramFeed";
 import CookieBanner from "./components/CookieBanner";
-import Shop from "./pages/Shop";
-import ProductDetails from "./pages/ProductDetails";
-import InstagramFeed from "./components/InstagramFeed";
-import CookieBanner from "./components/CookieBanner";
 
 export default function App() {
   const navigate = useNavigate();
@@ -57,6 +53,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("Tous");
   
+  const [isAIStylistOpen, setIsAIStylistOpen] = useState(false);
   // Advanced filters
   const [selectedTexture, setSelectedTexture] = useState<string>("Tous");
   const [maxPrice, setMaxPrice] = useState<number>(300);
@@ -101,14 +98,7 @@ export default function App() {
   const [isAiLoading, setIsAiLoading] = useState(false);
   const [aiRecommendation, setAiRecommendation] = useState<any | null>(null);
 
-  // Quick helper to pre-fill active length/density when selecting modal
-  useEffect(() => {
-    if (selectedProduct) {
-      setLocalLength(selectedProduct.lengths[0]);
-      setLocalDensity(selectedProduct.densities[0]);
-      setLocalColor(selectedProduct.colors[0]);
-    }
-  }, [selectedProduct]);
+
 
   // --- STATE FOR INTERACTIVE GAMIFIED EXPERIENCE ---
   const [selectedTicket, setSelectedTicket] = useState<number | null>(null);
@@ -173,7 +163,7 @@ export default function App() {
     }
 
     // Give visual animation feedback (Open Cart mini-drawer momentarily)
-    setIsCartOpen(true);
+    navigate("/panier");
     // Auto-scroll inside drawer if needed
   };
 
@@ -599,7 +589,7 @@ export default function App() {
           products={products}
           wishlist={wishlist}
           onToggleWishlist={toggleWishlist}
-          onProductClick={setSelectedProduct}
+          onProductClick={(p) => navigate(`/produit/${p.id}`)}
           onQuickAdd={handleQuickAdd}
         />
 
@@ -607,7 +597,7 @@ export default function App() {
           products={products}
           wishlist={wishlist}
           onToggleWishlist={toggleWishlist}
-          onProductClick={setSelectedProduct}
+          onProductClick={(p) => navigate(`/produit/${p.id}`)}
           onQuickAdd={handleQuickAdd}
         />
 
@@ -615,7 +605,7 @@ export default function App() {
           products={products}
           wishlist={wishlist}
           onToggleWishlist={toggleWishlist}
-          onProductClick={setSelectedProduct}
+          onProductClick={(p) => navigate(`/produit/${p.id}`)}
           onQuickAdd={handleQuickAdd}
         />
 
@@ -715,7 +705,7 @@ export default function App() {
               return (
                 <div 
                   key={p.id}
-                  onClick={() => setSelectedProduct(p)}
+                  onClick={() => navigate(`/produit/${p.id}`)}
                   className="group bg-white p-3 rounded-[32px] card-shadow flex flex-col border border-rose-50 hover:border-pink-200 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer relative"
                   id={`product-card-${p.id}`}
                 >
@@ -856,9 +846,7 @@ export default function App() {
       </Routes>
 
       <InstagramFeed />
-      <InstagramFeed />
       <Footer onOpenAIStylist={() => setIsAIStylistOpen(true)} />
-      <CookieBanner />
       <CookieBanner />
 
       {/* DRAWER: AI VIRTUAL STYLIST CHAT CONSULTATION */}

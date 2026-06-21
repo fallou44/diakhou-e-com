@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Sparkles, ArrowRight, ShieldCheck, Award, Flame, ChevronLeft, ChevronRight, Play, Pause, BadgePercent } from "lucide-react";
+import { Gem, ArrowRight, ShieldCheck, Award, Flame, ChevronLeft, ChevronRight, Play, Pause, BadgePercent } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface HeroProps {
@@ -45,7 +45,7 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
     {
       id: 2,
       badge: "DENTELLE ROYALE HD",
-      badgeIcon: <Sparkles className="w-3.5 h-3.5 text-amber-500 fill-amber-100 rotate-12" />,
+      badgeIcon: <Gem className="w-3.5 h-3.5 text-amber-500 fill-amber-100 rotate-12" />,
       titlePrefix: "Fusion Indétectable",
       titleHighlight: "HD Lace Frontal",
       titleSuffix: "13x6 Signature.",
@@ -189,7 +189,7 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
                           onClick={onOpenAIStylist}
                           className="px-8 py-3.5 bg-white hover:bg-pink-50 text-rose-950 border-2 border-pink-100 hover:border-pink-350 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                         >
-                          <Sparkles className="w-4 h-4 text-[#E91E63] animate-pulse" />
+                          <Gem className="w-4 h-4 text-[#E91E63] animate-pulse" />
                           <span>Conseil Visagiste IA</span>
                         </button>
                       </div>

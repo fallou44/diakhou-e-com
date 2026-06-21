@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter, Mail, MapPin, Phone, ScanFace, ArrowRight
 
 export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => void }) {
   return (
-    <footer className="bg-gradient-to-b from-rose-950 to-[#2A0B18] text-pink-50 rounded-t-[3rem] lg:rounded-t-[4rem] mt-16 pt-20 pb-8 px-4 sm:px-6 lg:px-8 shadow-[0_-20px_50px_-15px_rgba(233,30,99,0.1)] relative overflow-hidden" id="main-footer">
+    <footer className="bg-[#1A0B12] text-pink-50 rounded-t-[40px] mt-16 pt-20 pb-8 px-4 sm:px-6 lg:px-8 shadow-[0_-20px_50px_-15px_rgba(233,30,99,0.1)] relative overflow-hidden" id="main-footer">
       
       {/* Decorative background blurs */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-[80px] pointer-events-none" />
@@ -13,12 +13,12 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Top Section: Newsletter & Brand */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 mb-16 pb-12 border-b border-rose-900/50">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 mb-16 pb-12 border-b border-white/10">
           <div className="text-center lg:text-left">
-            <h3 className="font-serif text-3xl md:text-4xl font-bold text-white mb-3 tracking-tight">
-              Rejoignez le Cercle <span className="italic text-pink-400">Diakhou</span>
+            <h3 className="font-serif text-3xl md:text-4xl font-bold text-stone-100 mb-3 tracking-tight">
+              Rejoignez le Cercle <span className="italic text-rose-300">Diakhou</span>
             </h3>
-            <p className="text-sm text-pink-200/80 max-w-md mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-sm text-stone-400 max-w-md mx-auto lg:mx-0 leading-relaxed">
               Inscrivez-vous pour recevoir nos offres secrètes, nos conseils beauté personnalisés et un accès anticipé à nos nouvelles collections HD Lace.
             </p>
           </div>
@@ -26,9 +26,9 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
             <input 
               type="email" 
               placeholder="Votre adresse email d'exception..." 
-              className="w-full bg-[#3D1022] border border-rose-800/60 rounded-full py-4 pl-6 pr-16 text-sm text-white placeholder-pink-300/50 focus:outline-hidden focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all shadow-inner"
+              className="w-full bg-white/5 border border-rose-800/60 rounded-full py-4 pl-6 pr-16 text-sm text-stone-100 placeholder-pink-300/50 focus:outline-hidden focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition-all shadow-inner"
             />
-            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-pink-600 hover:bg-pink-500 rounded-full flex items-center justify-center text-white transition-colors cursor-pointer shadow-md">
+            <button className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-pink-600 hover:bg-pink-500 rounded-full flex items-center justify-center text-stone-100 transition-colors cursor-pointer shadow-md">
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -42,24 +42,24 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
             <Link to="/" className="inline-block" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <div className="flex items-center gap-2 group">
                 <div className="w-12 h-12 rounded-full bg-pink-100/10 border border-pink-200/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <span className="font-serif font-black text-2xl leading-none text-white tracking-tighter">D</span>
+                  <span className="font-serif font-black text-2xl leading-none text-stone-100 tracking-tighter">D</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-sans font-extrabold text-lg tracking-widest text-white uppercase leading-none">
+                  <span className="font-sans font-extrabold text-lg tracking-widest text-stone-100 uppercase leading-none">
                     Diakhou
                   </span>
-                  <span className="font-serif italic text-pink-400 font-medium text-xs tracking-wide mt-1 leading-none">
+                  <span className="font-serif italic text-rose-300 font-medium text-xs tracking-wide mt-1 leading-none">
                     Hair & Beauty
                   </span>
                 </div>
               </div>
             </Link>
-            <p className="text-[13px] text-pink-200/70 leading-relaxed max-w-xs">
+            <p className="text-[13px] text-stone-400 leading-relaxed max-w-xs">
               Maison de haute coiffure spécialisée dans les extensions et perruques premium 100% naturelles. L'excellence de la texture, l'art de la pose.
             </p>
             <div className="flex gap-3">
               {[Instagram, Facebook, Twitter].map((Icon, idx) => (
-                <a key={idx} href="#" className="w-10 h-10 rounded-full bg-rose-900/40 border border-rose-800/50 flex items-center justify-center text-pink-300 hover:bg-pink-600 hover:text-white hover:border-pink-500 transition-all shadow-xs">
+                <a key={idx} href="#" className="w-10 h-10 rounded-full bg-rose-900/40 border border-rose-800/50 flex items-center justify-center text-pink-300 hover:bg-pink-600 hover:text-stone-100 hover:border-pink-500 transition-all shadow-xs">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
@@ -68,7 +68,7 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-[0.2em] text-white mb-6 flex items-center gap-2">
+            <h4 className="font-bold text-sm uppercase tracking-[0.2em] text-stone-100 mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.5)]"></span>
               La Maison
             </h4>
@@ -82,7 +82,7 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
                   <Link 
                     to={link.path} 
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="text-[13px] text-pink-200/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 font-medium"
+                    className="text-[13px] text-stone-400 hover:text-stone-100 hover:translate-x-1 inline-block transition-all duration-300 font-medium"
                   >
                     {link.name}
                   </Link>
@@ -93,7 +93,7 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
 
           {/* Aide & Info */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-[0.2em] text-white mb-6 flex items-center gap-2">
+            <h4 className="font-bold text-sm uppercase tracking-[0.2em] text-stone-100 mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.5)]"></span>
               Informations
             </h4>
@@ -107,7 +107,7 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
                   <Link 
                     to={link.path} 
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                    className="text-[13px] text-pink-200/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 font-medium"
+                    className="text-[13px] text-stone-400 hover:text-stone-100 hover:translate-x-1 inline-block transition-all duration-300 font-medium"
                   >
                     {link.name}
                   </Link>
@@ -116,7 +116,7 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
               <li className="pt-2">
                 <button
                   onClick={onOpenAIStylist}
-                  className="group relative w-full py-3 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(233,30,99,0.3)] overflow-hidden"
+                  className="group relative w-full py-3 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-stone-100 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(233,30,99,0.3)] overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                   <ScanFace className="w-4 h-4 relative z-10" /> 
@@ -128,26 +128,26 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-[0.2em] text-white mb-6 flex items-center gap-2">
+            <h4 className="font-bold text-sm uppercase tracking-[0.2em] text-stone-100 mb-6 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-pink-500 shadow-[0_0_10px_rgba(236,72,153,0.5)]"></span>
               Contact
             </h4>
             <ul className="space-y-5">
-              <li className="flex items-start gap-3.5 text-[13px] text-pink-200/80">
+              <li className="flex items-start gap-3.5 text-[13px] text-stone-400">
                 <div className="w-8 h-8 rounded-full bg-rose-900/40 border border-rose-800/30 flex items-center justify-center shrink-0">
-                  <MapPin className="w-3.5 h-3.5 text-pink-400" />
+                  <MapPin className="w-3.5 h-3.5 text-rose-300" />
                 </div>
                 <span className="leading-relaxed mt-1">12 Avenue Montaigne<br />75008 Paris, France</span>
               </li>
-              <li className="flex items-center gap-3.5 text-[13px] text-pink-200/80">
+              <li className="flex items-center gap-3.5 text-[13px] text-stone-400">
                 <div className="w-8 h-8 rounded-full bg-rose-900/40 border border-rose-800/30 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5 text-pink-400" />
+                  <Phone className="w-3.5 h-3.5 text-rose-300" />
                 </div>
                 <span>+33 1 23 45 67 89</span>
               </li>
-              <li className="flex items-center gap-3.5 text-[13px] text-pink-200/80">
+              <li className="flex items-center gap-3.5 text-[13px] text-stone-400">
                 <div className="w-8 h-8 rounded-full bg-rose-900/40 border border-rose-800/30 flex items-center justify-center shrink-0">
-                  <Mail className="w-3.5 h-3.5 text-pink-400" />
+                  <Mail className="w-3.5 h-3.5 text-rose-300" />
                 </div>
                 <span>contact@diakhou-hair.com</span>
               </li>
@@ -157,8 +157,8 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-rose-900/60 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[11px] text-pink-300/50 uppercase tracking-widest font-medium">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-[11px] text-stone-500 uppercase tracking-widest font-medium">
             &copy; {new Date().getFullYear()} Diakhou Hair & Beauty. Tous droits réservés.
           </p>
           <div className="flex items-center gap-5 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">

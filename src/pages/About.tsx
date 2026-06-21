@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, ShieldCheck, Heart } from "lucide-react";
+import { Gem, ShieldCheck, Heart } from "lucide-react";
 
 export default function About() {
   return (
@@ -39,7 +39,7 @@ export default function About() {
             <p className="text-xs text-stone-500">Chaque perruque passe par un contrôle rigoureux de 14 points avant expédition.</p>
           </div>
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-rose-50 flex flex-col items-center">
-            <Sparkles className="w-8 h-8 text-rose-500 mb-3" />
+            <Gem className="w-8 h-8 text-rose-500 mb-3" />
             <h3 className="font-bold text-rose-950 text-sm mb-2">Innovation Continue</h3>
             <p className="text-xs text-stone-500">Créateurs des modèles Wear & Go 3D sans colle pour un confort absolu.</p>
           </div>

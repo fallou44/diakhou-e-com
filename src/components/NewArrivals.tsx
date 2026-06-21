@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, Star, Heart, Plus } from "lucide-react";
+import { Gem, Star, Heart, Plus } from "lucide-react";
 import { Product } from "../types";
 import { getPrice } from "../data/products";
 import { motion } from "motion/react";
@@ -32,7 +32,7 @@ export default function NewArrivals({
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-3 mb-10 pb-6 border-b border-emerald-100/30">
         <div>
           <div className="flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 rounded-full text-[10px] font-extrabold uppercase tracking-widest w-max mb-2 border border-emerald-200">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600 animate-spin" />
+            <Gem className="w-3.5 h-3.5 text-emerald-600 animate-spin" />
             <span>EXCLUSIVITÉ NOUVEAUX DROPS</span>
           </div>
           <h2 className="font-serif text-3xl font-extrabold text-stone-900">

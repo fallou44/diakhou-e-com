@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ShoppingBag, Heart, Crown, Search, ShieldCheck, ScanFace, Menu, X } from "lucide-react";
+import { ShoppingBag, Heart, Gem, Search, ShieldCheck, ScanFace, Menu, X } from "lucide-react";
 import { CartItem } from "../types";
 import { Link } from "react-router-dom";
 
@@ -41,7 +41,7 @@ export default function Navbar({
       <div className="bg-[#E91E63] text-white text-[11px] sm:text-xs py-2.5 px-4 transition-all duration-300 shadow-md relative z-50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-center gap-1.5 font-medium tracking-wide">
           <div className="flex items-center gap-1.5">
-            <Crown className="w-4 h-4 animate-pulse text-pink-200" />
+            <Gem className="w-4 h-4 animate-pulse text-pink-200" />
             <span>OFFRE DIAKHOU LUXE : -20% sur tout le site avec le code <strong className="font-bold underline text-pink-100 ml-1 tracking-widest">ROSE20</strong></span>
           </div>
           <div className="flex items-center gap-4 text-[10px] sm:text-[11px] text-pink-100">
@@ -77,18 +77,9 @@ export default function Navbar({
               }}
             >
               {/* Refined Luxury Logo Mark */}
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-tr from-pink-200 to-rose-100 border border-white shadow-[0_4px_15px_rgba(233,30,99,0.15)] flex items-center justify-center relative transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-500">
-                <span className="absolute -top-[4px] -left-[2px] rotate-[-20deg] text-[12px] sm:text-[14px] drop-shadow-xs" title="Crown">👑</span>
-                <span className="font-serif font-black text-rose-950 text-xl sm:text-2xl leading-none ml-0.5 tracking-tighter">D</span>
-              </div>
-              {/* Typography */}
-              <div className="flex flex-col">
-                <span className="font-serif font-extrabold text-xl sm:text-[22px] tracking-[0.15em] text-rose-950 uppercase leading-none mb-1 sm:mb-1.5">
-                  Diakhou
-                </span>
-                <span className="font-sans font-bold text-rose-500 text-[8px] sm:text-[10px] tracking-[0.25em] uppercase leading-none">
-                  Hair & Beauty
-                </span>
+              <div className="flex flex-col items-center justify-center">
+                <span className="font-serif font-black text-rose-950 text-3xl leading-none tracking-tighter group-hover:text-rose-600 transition-colors">DIAKHOU</span>
+                <span className="font-sans font-bold text-rose-400 text-[9px] tracking-[0.3em] uppercase leading-none mt-1">HAIR & BEAUTY</span>
               </div>
             </Link>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Star, Heart, Plus, Trophy, Sparkles } from "lucide-react";
+import { Star, Heart, Plus, Trophy, Gem } from "lucide-react";
 import { Product } from "../types";
 import { getPrice } from "../data/products";
 import { motion } from "motion/react";
@@ -79,7 +79,7 @@ export default function BestSellers({
           </p>
         </div>
         <div className="text-xs text-[#E91E63] font-black tracking-widest uppercase flex items-center gap-1">
-          <Sparkles className="w-4 h-4 text-pink-400 rotate-12" />
+          <Gem className="w-4 h-4 text-pink-400 rotate-12" />
           Mise à jour aujourd'hui
         </div>
       </div>
