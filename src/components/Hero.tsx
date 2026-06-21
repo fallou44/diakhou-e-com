@@ -3,7 +3,6 @@ import { Gem, ArrowRight, ShieldCheck, Award, Flame, ChevronLeft, ChevronRight, 
 import { motion, AnimatePresence } from "motion/react";
 
 interface HeroProps {
-  onOpenAIStylist: () => void;
   onExploreProducts: () => void;
 }
 
@@ -22,7 +21,7 @@ interface SlideItem {
   buttonText: string;
 }
 
-export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) {
+export default function Hero({ onExploreProducts }: HeroProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -184,14 +183,6 @@ export default function Hero({ onOpenAIStylist, onExploreProducts }: HeroProps) 
                           <ArrowRight className="w-4 h-4" />
                         </button>
 
-                        {/* AI Stylist button */}
-                        <button
-                          onClick={onOpenAIStylist}
-                          className="px-8 py-3.5 bg-white hover:bg-pink-50 text-rose-950 border-2 border-pink-100 hover:border-pink-350 rounded-full text-xs font-extrabold uppercase tracking-wider transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
-                        >
-                          <Gem className="w-4 h-4 text-[#E91E63] animate-pulse" />
-                          <span>Conseil Visagiste IA</span>
-                        </button>
                       </div>
 
                       {/* Sticky Promotional mini label */}

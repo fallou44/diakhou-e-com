@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 
-export default function Footer({ onOpenAIStylist }: {  }) {
+export default function Footer() {
   return (
     <footer className="bg-[#1A0B12] text-pink-50 rounded-t-[40px] mt-16 pt-20 pb-8 px-4 sm:px-6 lg:px-8 shadow-[0_-20px_50px_-15px_rgba(233,30,99,0.1)] relative overflow-hidden" id="main-footer">
       

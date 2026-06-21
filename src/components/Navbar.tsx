@@ -188,17 +188,7 @@ export default function Navbar({
                 ))}
               </div>
               
-              {/* Mobile AI Stylist */}
-              <button
-                onClick={() => {
-                  onOpenAIStylist();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="w-full flex items-center justify-center gap-2 px-5 py-4 bg-rose-950 hover:bg-rose-900 text-white rounded-xl text-xs font-bold tracking-widest uppercase shadow-[0_4px_15px_rgba(74,21,44,0.2)] transition-all duration-300 cursor-pointer"
-              >
-                <ScanFace className="w-5 h-5 text-pink-300 animate-pulse" />
-                <span>IA Visagiste Diakhou</span>
-              </button>
+
 
             </div>
           </div>
