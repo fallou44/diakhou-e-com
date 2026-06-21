@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import { 
   Heart, 
   ShoppingBag, 
-  Sparkles, 
+  ScanFace, 
   X, 
   Plus, 
   Minus, 
@@ -21,7 +21,8 @@ import {
   Check, 
   Filter, 
   HelpCircle,
-  MessageSquare
+  MessageSquare,
+  Gift
 } from "lucide-react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -37,6 +38,8 @@ import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import Footer from "./components/Footer";
+import Cart from "./pages/Cart";
+import Wishlist from "./pages/Wishlist";
 
 export default function App() {
   // State
@@ -350,8 +353,6 @@ export default function App() {
       <Navbar 
         cart={cart}
         wishlist={wishlist}
-        onOpenCart={() => { setIsCartOpen(true); setIsWishlistOpen(false); }}
-        onOpenWishlist={() => { setIsWishlistOpen(true); setIsCartOpen(false); }}
         onOpenAIStylist={() => setIsAIStylistOpen(true)}
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -383,7 +384,7 @@ export default function App() {
             
             <div>
               <div className="flex items-center gap-1.5 px-2.5 py-1 bg-pink-500/25 border border-pink-400/30 rounded-full text-[9px] font-bold text-pink-200 tracking-wider uppercase w-max mb-3">
-                <Sparkles className="w-3 h-3 text-pink-300 animate-spin" />
+                <Gift className="w-3 h-3 text-pink-300 animate-spin" />
                 <span>EXPÉRIENCE SENSATIONNELLE EN DIRECT</span>
               </div>
               <h3 className="font-serif text-2xl font-bold tracking-tight text-pink-100">
@@ -838,9 +839,9 @@ export default function App() {
             <h4 className="font-serif text-sm font-semibold tracking-wide text-rose-950">SATISFACTION GARANTIE</h4>
             <p className="text-xs text-gray-600">Retours gratuits sous 15 jours si la perruque n'a été ni découpée ni modifiée.</p>
           </div>
-          <div className="space-y-2">
-            <div className="w-12 h-12 bg-rose-100/70 text-rose-700 rounded-full flex items-center justify-center mx-auto">
-              <Sparkles className="w-6 h-6" />
+          <div className="space-y-2 cursor-pointer group" onClick={() => setIsAIStylistOpen(true)}>
+            <div className="w-12 h-12 bg-rose-100/70 text-rose-700 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+              <ScanFace className="w-6 h-6" />
             </div>
             <h4 className="font-serif text-sm font-semibold tracking-wide text-rose-950">CONSEIL SUR MESURE</h4>
             <p className="text-xs text-gray-600">Notre styliste IA dédiée et notre assistance humaine sont disposés 24h/24.</p>
@@ -849,13 +850,15 @@ export default function App() {
       </section>
           </>
         } />
+        <Route path="/panier" element={<Cart cart={cart} updateCartQty={updateCartQty} clearCart={() => setCart([])} />} />
+        <Route path="/favoris" element={<Wishlist wishlist={wishlist} toggleWishlist={toggleWishlist} onSelectProduct={setSelectedProduct} />} />
         <Route path="/a-propos" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/mentions-legales" element={<Legal />} />
       </Routes>
 
-      <Footer />
+      <Footer onOpenAIStylist={() => setIsAIStylistOpen(true)} />
 
 
       {/* MODAL: PRODUCT DETAILS & ADVANCED OPTIONS CONFIGURATOR */}
@@ -1632,7 +1635,7 @@ export default function App() {
             {/* Drawer Header */}
             <div className="p-6 border-b border-rose-100 flex items-center justify-between bg-rose-950 text-white shadow-md">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-rose-450 animate-bounce" />
+                <ScanFace className="w-5 h-5 text-rose-450 animate-pulse" />
                 <div>
                   <h3 className="font-serif text-lg font-bold tracking-tight">Conseils Visagiste IA Diakhou</h3>
                   <p className="text-[10px] text-pink-200/80 leading-none">Diagnostic morphologique & astuces d'esthéticienne</p>
@@ -1653,7 +1656,7 @@ export default function App() {
               {/* Introduction header */}
               <div className="bg-rose-50/50 p-4 rounded-2xl border border-rose-100 flex gap-3 text-xs leading-relaxed">
                 <div className="w-9 h-9 rounded-full bg-rose-200 flex items-center justify-center shrink-0">
-                  <Sparkles className="w-5 h-5 text-rose-700" />
+                  <ScanFace className="w-5 h-5 text-rose-700" />
                 </div>
                 <div>
                   <span className="font-bold text-rose-950 uppercase text-[10px] tracking-wide block">Conseillère Virtuelle Diakhou</span>
@@ -1759,7 +1762,7 @@ export default function App() {
                     </>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4 text-rose-455 animate-bounce" />
+                      <ScanFace className="w-4 h-4 text-rose-455 animate-pulse" />
                       <span>Générer ma Recommandation IA</span>
                     </>
                   )}
@@ -1770,7 +1773,7 @@ export default function App() {
               {aiRecommendation && (
                 <div className="bg-[#FFF8FA] p-5 rounded-3xl border-2 border-rose-200 shadow-md space-y-4 animate-fadeIn" id="ai-report-box">
                   <div className="flex items-center gap-2 pb-2.5 border-b border-rose-100 text-rose-900">
-                    <Sparkles className="w-5 h-5 text-rose-500" />
+                    <ScanFace className="w-5 h-5 text-rose-500" />
                     <h4 className="font-serif font-bold text-md leading-none">Rapport de Style Personnalisé</h4>
                   </div>
 
