@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { ShoppingBag, Heart, Gem, Search, ShieldCheck, ScanFace, Menu, X } from "lucide-react";
+import { ShoppingBag, Heart, Gem, Search, ShieldCheck, Menu, X } from "lucide-react";
 import { CartItem } from "../types";
 import { Link } from "react-router-dom";
 
 interface NavbarProps {
   cart: CartItem[];
   wishlist: string[];
-  onOpenAIStylist: () => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   activeCategory: string;
@@ -16,7 +15,6 @@ interface NavbarProps {
 export default function Navbar({
   cart,
   wishlist,
-  onOpenAIStylist,
   searchQuery,
   setSearchQuery,
   activeCategory,
@@ -99,14 +97,6 @@ export default function Navbar({
 
             {/* Icon Controls */}
             <div className="flex items-center gap-1 sm:gap-3 shrink-0">
-              {/* AI Button */}
-              <button
-                onClick={onOpenAIStylist}
-                className="hidden md:flex items-center gap-2 px-5 py-2.5 bg-rose-950 hover:bg-rose-900 text-white rounded-full text-xs font-bold tracking-widest uppercase shadow-[0_4px_15px_rgba(74,21,44,0.2)] hover:shadow-[0_4px_20px_rgba(233,30,99,0.3)] transition-all duration-300 cursor-pointer group active:scale-95"
-              >
-                <ScanFace className="w-4 h-4 text-pink-300 group-hover:animate-pulse" />
-                <span>IA Visagiste</span>
-              </button>
               
               {/* Wishlist */}
               <Link

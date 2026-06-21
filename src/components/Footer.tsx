@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, MapPin, Phone, ScanFace, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 
-export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => void }) {
+export default function Footer({ onOpenAIStylist }: {  }) {
   return (
     <footer className="bg-[#1A0B12] text-pink-50 rounded-t-[40px] mt-16 pt-20 pb-8 px-4 sm:px-6 lg:px-8 shadow-[0_-20px_50px_-15px_rgba(233,30,99,0.1)] relative overflow-hidden" id="main-footer">
       
@@ -113,16 +113,6 @@ export default function Footer({ onOpenAIStylist }: { onOpenAIStylist?: () => vo
                   </Link>
                 </li>
               ))}
-              <li className="pt-2">
-                <button
-                  onClick={onOpenAIStylist}
-                  className="group relative w-full py-3 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-stone-100 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 shadow-[0_4px_15px_rgba(233,30,99,0.3)] overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                  <ScanFace className="w-4 h-4 relative z-10" /> 
-                  <span className="relative z-10">Consultation IA</span>
-                </button>
-              </li>
             </ul>
           </div>
 

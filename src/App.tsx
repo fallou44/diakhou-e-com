@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from "react";
 import { 
   Heart, 
   ShoppingBag, 
-  ScanFace, 
   X, 
   Plus, 
   Minus, 
@@ -52,8 +51,6 @@ export default function App() {
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("Tous");
-  
-  const [isAIStylistOpen, setIsAIStylistOpen] = useState(false);
   // Advanced filters
   const [selectedTexture, setSelectedTexture] = useState<string>("Tous");
   const [maxPrice, setMaxPrice] = useState<number>(300);
@@ -84,19 +81,6 @@ export default function App() {
 
   // Generated fake order data
   const [lastOrder, setLastOrder] = useState<Order | null>(null);
-
-  // AI Virtual Stylist Consultation Form
-  const [aiForm, setAiForm] = useState({
-    facialShape: "Ovale",
-    skinTone: "Teint Marron Doré / Chaud",
-    lengthPreference: "Long (22-26 pouces)",
-    texturePreference: "Body Wave",
-    lifestyle: "Actif / Professionnel soutenu",
-    occasion: "Quotidien chic et Soirées",
-    extraInfo: ""
-  });
-  const [isAiLoading, setIsAiLoading] = useState(false);
-  const [aiRecommendation, setAiRecommendation] = useState<any | null>(null);
 
 
 
@@ -342,7 +326,7 @@ export default function App() {
       <Navbar 
         cart={cart}
         wishlist={wishlist}
-        onOpenAIStylist={() => setIsAIStylistOpen(true)}
+        
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         activeCategory={activeCategory}
@@ -354,7 +338,7 @@ export default function App() {
           <>
             {/* Hero Visual Banner Section */}
             <Hero 
-        onOpenAIStylist={() => setIsAIStylistOpen(true)}
+        
         onExploreProducts={() => {
           const el = document.getElementById("catalog-section");
           if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -846,7 +830,7 @@ export default function App() {
       </Routes>
 
       <InstagramFeed />
-      <Footer onOpenAIStylist={() => setIsAIStylistOpen(true)} />
+      <Footer  />
       <CookieBanner />
 
       {/* DRAWER: AI VIRTUAL STYLIST CHAT CONSULTATION */}
