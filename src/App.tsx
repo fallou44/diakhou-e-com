@@ -44,6 +44,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Auth from "./pages/Auth";
 import InstagramFeed from "./components/InstagramFeed";
 import CookieBanner from "./components/CookieBanner";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 export default function App() {
   const navigate = useNavigate();
@@ -788,6 +789,7 @@ export default function App() {
       <InstagramFeed />
       <Footer  />
       <CookieBanner />
+      <ScrollToTopButton />
 
 
 
