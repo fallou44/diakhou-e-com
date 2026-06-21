@@ -31,6 +31,12 @@ import NewArrivals from "./components/NewArrivals";
 import CategoryBanner from "./components/CategoryBanner";
 import { products, getPrice } from "./data/products";
 import { Product, CartItem, Order } from "./types";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import FAQ from "./pages/FAQ";
+import Contact from "./pages/Contact";
+import Legal from "./pages/Legal";
+import Footer from "./components/Footer";
 
 export default function App() {
   // State
@@ -338,7 +344,8 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF5F7] text-rose-950 font-sans selection:bg-rose-200 selection:text-rose-900" id="diakhou-root">
+    <BrowserRouter>
+      <div className="min-h-screen bg-[#FFF5F7] text-rose-950 font-sans selection:bg-rose-200 selection:text-rose-900" id="diakhou-root">
       {/* Navbar Integration */}
       <Navbar 
         cart={cart}
@@ -352,8 +359,11 @@ export default function App() {
         setActiveCategory={setActiveCategory}
       />
 
-      {/* Hero Visual Banner Section */}
-      <Hero 
+      <Routes>
+        <Route path="/" element={
+          <>
+            {/* Hero Visual Banner Section */}
+            <Hero 
         onOpenAIStylist={() => setIsAIStylistOpen(true)}
         onExploreProducts={() => {
           const el = document.getElementById("catalog-section");
@@ -837,80 +847,15 @@ export default function App() {
           </div>
         </div>
       </section>
+          </>
+        } />
+        <Route path="/a-propos" element={<About />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/mentions-legales" element={<Legal />} />
+      </Routes>
 
-      {/* FOOTER */}
-      <footer className="bg-rose-950 text-pink-100 py-16 px-4" id="app-footer">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="font-sans font-black text-xl tracking-widest text-white uppercase">
-                Diakhou
-              </span>
-              <span className="text-pink-300 font-serif lowercase italic text-sm font-semibold">hair & beauty</span>
-            </div>
-            <p className="text-xs text-pink-200/80 leading-relaxed">
-              La marque de référence pour les extensions de cheveux vierges, les perruques Wear & Go d'exception et la dentelle haute fidélité préférée des célébrités mondiales.
-            </p>
-            <div className="flex gap-4 pt-2">
-              <span className="text-xs bg-rose-900/50 px-2.5 py-1 rounded text-rose-300 font-bold">Certifié 100% Humain</span>
-              <span className="text-xs bg-rose-900/50 px-2.5 py-1 rounded text-rose-300 font-bold">Lace HD brevetée</span>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-white text-sm uppercase tracking-wider mb-4">Le Style Diakhou</h4>
-            <ul className="space-y-2 text-xs text-pink-200/85">
-              <li><a href="#catalog-section" className="hover:text-white transition-colors">Wear & Go (Glueless)</a></li>
-              <li><a href="#catalog-section" className="hover:text-white transition-colors">HD Lace de Niveau 1</a></li>
-              <li><a href="#catalog-section" className="hover:text-white transition-colors">Perruques Bob Courtes</a></li>
-              <li><a href="#catalog-section" className="hover:text-white transition-colors">Pro-Pre-Plucked Lines</a></li>
-              <li><a href="#catalog-section" className="hover:text-white transition-colors">Tissages & Closures 10A</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold text-white text-sm uppercase tracking-wider mb-4">Garantie & Support</h4>
-            <ul className="space-y-2 text-xs text-pink-200/85">
-              <li><span className="hover:text-white cursor-pointer">Guide d'Entretien Capillaire</span></li>
-              <li><span className="hover:text-white cursor-pointer">Livraisons & Retours Simplifiés</span></li>
-              <li><span className="hover:text-white cursor-pointer">Suivi de Colis DHL</span></li>
-              <li><span className="hover:text-white cursor-pointer">Authenticité 100% Remy Hair</span></li>
-              <li><span className="hover:text-white cursor-pointer">Conditions Générales de Vente</span></li>
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-bold text-white text-sm uppercase tracking-wider">Aide & Conseils Mandatés</h4>
-            <p className="text-xs text-pink-200/80 leading-relaxed">
-              Consultez notre Styliste IA à tout moment pour élaborer votre propre diagnostic capillaire personnalisé.
-            </p>
-            <button
-              onClick={() => setIsAIStylistOpen(true)}
-              className="w-full py-2.5 bg-rose-600 hover:bg-rose-500 text-white rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-1.5 shadow-md"
-              id="footer-ai-btn"
-            >
-              <Sparkles className="w-3.5 h-3.5" /> Lancer ma consultation IA
-            </button>
-          </div>
-        </div>
-
-        {/* Footer legal & payment partner emblems */}
-        <div className="max-w-7xl mx-auto border-t border-rose-900 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-6 text-xs text-pink-300">
-          <div>
-            <p>© 2026 Diakhou Hair & Beauty. Tous droits réservés. Développé en plateforme sécurisée.</p>
-          </div>
-          <div className="flex gap-4 items-center">
-            <span className="text-[10px] uppercase font-bold tracking-widest text-[#FFF5F7]/40">Partenaires de Sécurité :</span>
-            <div className="flex gap-4 items-center font-bold tracking-tight text-white/50 text-[11px]">
-              <span>VISA</span>
-              <span>MASTERCARD</span>
-              <span>STRIPE</span>
-              <span>APPLE PAY</span>
-              <span>3D-SECURE</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
 
       {/* MODAL: PRODUCT DETAILS & ADVANCED OPTIONS CONFIGURATOR */}
@@ -1931,6 +1876,7 @@ export default function App() {
         </div>
       )}
 
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }

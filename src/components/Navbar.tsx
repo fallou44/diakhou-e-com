@@ -1,6 +1,7 @@
 import React from "react";
 import { ShoppingBag, Heart, Sparkles, Search, ShieldCheck } from "lucide-react";
 import { CartItem } from "../types";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 interface NavbarProps {
   cart: CartItem[];
@@ -59,8 +60,9 @@ export default function Navbar({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
         
         {/* Logo - Fully Customized to match the image precisely */}
-        <div 
-          className="flex items-center gap-3 cursor-pointer select-none group" 
+        <Link 
+          to="/"
+          className="flex items-center gap-3 cursor-pointer select-none group focus:outline-hidden" 
           onClick={() => setActiveCategory("Tous")}
           id="diakhou-logo-container"
         >
@@ -82,7 +84,7 @@ export default function Navbar({
               Hair & Beauty
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Search Bar - Aesthetic & Modern */}
         <div className="hidden md:flex flex-1 max-w-md relative" id="search-bar-navbar">
