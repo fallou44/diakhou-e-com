@@ -3,9 +3,9 @@ import { Heart, MessageCircle } from "lucide-react";
 
 export default function InstagramFeed() {
   const instagramPosts = [
-    { id: 1, img: "https://images.unsplash.com/photo-1595959183075-c1d09e57ad44?auto=format&fit=crop&q=80&w=400", likes: 1240, comments: 45 },
+    { id: 1, img: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=80&w=400", likes: 1240, comments: 45 },
     { id: 2, img: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=400", likes: 890, comments: 23 },
-    { id: 3, img: "https://images.unsplash.com/photo-1605497746444-ac9dbd3d4401?auto=format&fit=crop&q=80&w=400", likes: 2100, comments: 120 },
+    { id: 3, img: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=400", likes: 2100, comments: 120 },
     { id: 4, img: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=400", likes: 1560, comments: 67 },
     { id: 5, img: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&q=80&w=400", likes: 3420, comments: 198 },
   ];
