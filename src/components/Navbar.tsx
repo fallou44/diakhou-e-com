@@ -57,12 +57,11 @@ export default function Navbar({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 gap-4 sm:gap-8">
             
-            {/* Mobile Menu Button */}
             <button 
-              className="lg:hidden p-2 text-rose-950 hover:bg-rose-50 rounded-full transition-colors cursor-pointer"
+              className="lg:hidden p-1.5 sm:p-2 text-rose-950 hover:bg-rose-50 rounded-full transition-colors cursor-pointer shrink-0"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
 
             {/* Logo Section */}
@@ -74,10 +73,9 @@ export default function Navbar({
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
             >
-              {/* Refined Luxury Logo Mark */}
               <div className="flex flex-col items-center justify-center">
-                <span className="font-serif font-black text-rose-950 text-3xl leading-none tracking-tighter group-hover:text-rose-600 transition-colors">DIAKHOU</span>
-                <span className="font-sans font-bold text-rose-400 text-[9px] tracking-[0.3em] uppercase leading-none mt-1">HAIR & BEAUTY</span>
+                <span className="font-serif font-black text-rose-950 text-2xl sm:text-3xl leading-none tracking-tighter group-hover:text-rose-600 transition-colors">DIAKHOU</span>
+                <span className="font-sans font-bold text-rose-400 text-[8px] sm:text-[9px] tracking-[0.3em] uppercase leading-none mt-1">HAIR & BEAUTY</span>
               </div>
             </Link>
 

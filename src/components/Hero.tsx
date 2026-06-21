@@ -145,7 +145,7 @@ export default function Hero({ onExploreProducts }: HeroProps) {
                       </div>
 
                       {/* Main Dynamic Elegant Headline */}
-                      <h1 className="font-sans font-extrabold text-4xl sm:text-5xl lg:text-[54px] tracking-tight text-rose-950 leading-[1.1]">
+                      <h1 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-[54px] tracking-tight text-rose-950 leading-[1.1]">
                         {slide.titlePrefix}{" "}
                         <span className="font-serif italic font-medium text-[#E91E63] decoration-pink-300 decoration-wavy underline underline-offset-4">
                           {slide.titleHighlight}
