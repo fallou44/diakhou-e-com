@@ -55,49 +55,53 @@ export default function Navbar({
       {/* Glassmorphism Main Navbar */}
       <div className="bg-white/85 backdrop-blur-xl border-b border-pink-100 shadow-[0_4px_30px_rgba(233,30,99,0.05)] relative z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 gap-4 sm:gap-8">
+          <div className="grid grid-cols-3 items-center h-20 gap-4">
             
-            {/* Mobile Menu Button */}
-            <button 
-              className="lg:hidden p-2 text-rose-950 hover:bg-rose-50 rounded-full transition-colors cursor-pointer"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Left Section: Mobile Menu & Desktop Search */}
+            <div className="flex items-center justify-start">
+              {/* Mobile Menu Button */}
+              <button 
+                className="lg:hidden p-2 -ml-2 text-rose-950 hover:bg-rose-50 rounded-full transition-colors cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
 
-            {/* Logo Section */}
-            <Link 
-              to="/"
-              className="flex items-center gap-3 sm:gap-4 cursor-pointer select-none group focus:outline-hidden shrink-0" 
-              onClick={() => {
-                setActiveCategory("Tous");
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-            >
-              {/* Refined Luxury Logo Mark */}
-              <div className="flex flex-col items-center justify-center">
-                <span className="font-serif font-black text-rose-950 text-3xl leading-none tracking-tighter group-hover:text-rose-600 transition-colors">DIAKHOU</span>
-                <span className="font-sans font-bold text-rose-400 text-[9px] tracking-[0.3em] uppercase leading-none mt-1">HAIR & BEAUTY</span>
+              {/* Premium Search Bar (Desktop) */}
+              <div className="hidden lg:flex flex-1 max-w-sm relative group">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Search className="w-4 h-4 text-rose-400 group-focus-within:text-rose-600 transition-colors" />
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Rechercher..."
+                  className="w-full bg-rose-50/50 hover:bg-rose-50 border-transparent text-rose-950 text-xs sm:text-sm pl-11 pr-4 py-2.5 rounded-full focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-pink-200 focus:border-pink-200 placeholder-rose-300 transition-all shadow-inner"
+                />
               </div>
-            </Link>
-
-            {/* Premium Search Bar */}
-            <div className="hidden lg:flex flex-1 max-w-xl mx-8 relative group">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <Search className="w-4 h-4 text-rose-400 group-focus-within:text-rose-600 transition-colors" />
-              </div>
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Rechercher une perruque HD Lace, Wear & Go..."
-                className="w-full bg-rose-50/50 hover:bg-rose-50 border-transparent text-rose-950 text-xs sm:text-sm pl-11 pr-4 py-3 rounded-2xl focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-pink-200 focus:border-pink-200 placeholder-rose-300 transition-all shadow-inner"
-              />
             </div>
 
-            {/* Icon Controls */}
-            <div className="flex items-center gap-1 sm:gap-3 shrink-0">
-              
+            {/* Center Section: Logo */}
+            <div className="flex items-center justify-center">
+              <Link 
+                to="/"
+                className="flex items-center gap-3 sm:gap-4 cursor-pointer select-none group focus:outline-hidden shrink-0" 
+                onClick={() => {
+                  setActiveCategory("Tous");
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
+                {/* Refined Luxury Logo Mark */}
+                <div className="flex flex-col items-center justify-center">
+                  <span className="font-serif font-black text-rose-950 text-2xl sm:text-3xl leading-none tracking-tighter group-hover:text-rose-600 transition-colors">DIAKHOU</span>
+                  <span className="font-sans font-bold text-rose-400 text-[8px] sm:text-[9px] tracking-[0.3em] uppercase leading-none mt-1">HAIR & BEAUTY</span>
+                </div>
+              </Link>
+            </div>
+
+            {/* Right Section: Icon Controls */}
+            <div className="flex items-center justify-end gap-1 sm:gap-3 shrink-0">
               {/* Wishlist */}
               <Link
                 to="/favoris"
@@ -122,6 +126,7 @@ export default function Navbar({
                 )}
               </Link>
             </div>
+            
           </div>
         </div>
 
