@@ -6,10 +6,9 @@ import { products } from '../data/products';
 interface WishlistProps {
   wishlist: string[];
   toggleWishlist: (productId: string, e: React.MouseEvent) => void;
-  onSelectProduct: (product: any) => void;
 }
 
-export default function Wishlist({ wishlist, toggleWishlist, onSelectProduct }: WishlistProps) {
+export default function Wishlist({ wishlist, toggleWishlist }: WishlistProps) {
   const wishlistedProducts = products.filter(p => wishlist.includes(p.id));
 
   return (
@@ -37,10 +36,10 @@ export default function Wishlist({ wishlist, toggleWishlist, onSelectProduct }: 
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {wishlistedProducts.map((item) => (
-              <div 
+              <Link 
                 key={item.id} 
-                className="group bg-white rounded-3xl border border-rose-100 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer relative"
-                onClick={() => onSelectProduct(item)}
+                to={`/produit/${item.id}`}
+                className="group bg-white rounded-3xl border border-rose-100 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all relative block"
               >
                 <button
                   onClick={(e) => toggleWishlist(item.id, e)}
@@ -68,7 +67,7 @@ export default function Wishlist({ wishlist, toggleWishlist, onSelectProduct }: 
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}

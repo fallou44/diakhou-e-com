@@ -1,5 +1,5 @@
-import React from "react";
-import { ShoppingBag, Heart, Crown, Search, ShieldCheck, ScanFace } from "lucide-react";
+import React, { useState } from "react";
+import { ShoppingBag, Heart, Crown, Search, ShieldCheck, ScanFace, Menu, X } from "lucide-react";
 import { CartItem } from "../types";
 import { Link } from "react-router-dom";
 
@@ -22,6 +22,8 @@ export default function Navbar({
   activeCategory,
   setActiveCategory,
 }: NavbarProps) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
   const totalCartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   const categories = [
@@ -57,6 +59,14 @@ export default function Navbar({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 gap-4 sm:gap-8">
             
+            {/* Mobile Menu Button */}
+            <button 
+              className="lg:hidden p-2 text-rose-950 hover:bg-rose-50 rounded-full transition-colors cursor-pointer"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+
             {/* Logo Section */}
             <Link 
               to="/"
@@ -157,6 +167,61 @@ export default function Navbar({
             </div>
           </div>
         </nav>
+
+        {/* Mobile Full Screen Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 w-full h-screen bg-white/95 backdrop-blur-xl border-t border-pink-100 z-50 overflow-y-auto">
+            <div className="p-6 space-y-6">
+              {/* Mobile Search */}
+              <div className="relative group">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Search className="w-4 h-4 text-rose-400 group-focus-within:text-rose-600 transition-colors" />
+                </div>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Rechercher une perruque..."
+                  className="w-full bg-rose-50/50 hover:bg-rose-50 border-transparent text-rose-950 text-sm pl-11 pr-4 py-3.5 rounded-2xl focus:outline-hidden focus:bg-white focus:ring-2 focus:ring-pink-200 focus:border-pink-200 placeholder-rose-300 transition-all shadow-inner"
+                />
+              </div>
+
+              {/* Mobile Categories */}
+              <div className="space-y-1">
+                <h3 className="text-xs font-bold text-rose-400 uppercase tracking-widest mb-3 px-2">Catégories</h3>
+                {categories.map((cat) => (
+                  <button
+                    key={cat.id}
+                    onClick={() => {
+                      setActiveCategory(cat.id);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition-all ${
+                      activeCategory === cat.id
+                        ? "bg-rose-50 text-rose-600 shadow-xs"
+                        : "text-rose-950 hover:bg-rose-50/50"
+                    }`}
+                  >
+                    {cat.name}
+                  </button>
+                ))}
+              </div>
+              
+              {/* Mobile AI Stylist */}
+              <button
+                onClick={() => {
+                  onOpenAIStylist();
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full flex items-center justify-center gap-2 px-5 py-4 bg-rose-950 hover:bg-rose-900 text-white rounded-xl text-xs font-bold tracking-widest uppercase shadow-[0_4px_15px_rgba(74,21,44,0.2)] transition-all duration-300 cursor-pointer"
+              >
+                <ScanFace className="w-5 h-5 text-pink-300 animate-pulse" />
+                <span>IA Visagiste Diakhou</span>
+              </button>
+
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
