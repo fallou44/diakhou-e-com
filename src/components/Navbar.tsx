@@ -135,7 +135,15 @@ export default function Navbar({
         {/* Categories Navigation Bar (Sleek Tabs) */}
         <nav className="border-t border-pink-100/60 bg-white/40">
           <div className="max-w-7xl mx-auto px-4 flex overflow-x-auto scrollbar-none">
-            <div className="flex space-x-6 sm:space-x-8 w-full md:justify-center">
+            <div className="flex space-x-6 sm:space-x-8 w-full md:justify-center items-center">
+              <Link
+                to="/boutique"
+                className="relative py-3.5 sm:py-4 px-1 text-[10px] sm:text-xs font-black uppercase tracking-widest whitespace-nowrap transition-colors cursor-pointer text-[#E91E63] hover:text-rose-950 flex items-center gap-1.5"
+              >
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span>BOUTIQUE</span>
+              </Link>
+              <div className="h-4 w-px bg-rose-200/60 hidden sm:block shrink-0" />
               {categories.map((cat) => (
                 <button
                   key={cat.id}
@@ -176,7 +184,16 @@ export default function Navbar({
 
               {/* Mobile Categories */}
               <div className="space-y-1">
-                <h3 className="text-xs font-bold text-rose-400 uppercase tracking-widest mb-3 px-2">Catégories</h3>
+                <Link
+                  to="/boutique"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full flex items-center gap-2 px-4 py-3.5 rounded-xl text-sm font-bold bg-[#E91E63] text-white shadow-md mb-6 uppercase tracking-widest"
+                >
+                  <ShoppingBag className="w-4 h-4" />
+                  <span>Accéder à la Boutique</span>
+                </Link>
+
+                <h3 className="text-xs font-bold text-rose-400 uppercase tracking-widest mb-3 px-2">Filtrer l'Accueil par Catégories</h3>
                 {categories.map((cat) => (
                   <button
                     key={cat.id}
