@@ -1,0 +1,6 @@
+{
+  "name": "Diakhou Hair & Beauty",
+  "description": "Boutique d'extensions de cheveux et de perruques haut de gamme au design rose couture épuré, dotée d'conseils visagiste personnalisés par IA (Gemini 3.5) ainsi que d'un paiement sécurisé.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
