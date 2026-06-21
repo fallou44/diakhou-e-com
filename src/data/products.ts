@@ -11,7 +11,7 @@ export const products: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1595959183075-c1d09e57ad44?auto=format&fit=crop&q=80&w=600"
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=80&w=600"
     ],
     rating: 4.9,
     reviewsCount: 342,
@@ -30,9 +30,9 @@ export const products: Product[] = [
     category: "HD Lace Frontal",
     texture: "Straight",
     basePrice: 189,
-    image: "https://images.unsplash.com/photo-1595959183075-c1d09e57ad44?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=80&w=600",
     images: [
-      "https://images.unsplash.com/photo-1595959183075-c1d09e57ad44?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600"
     ],
@@ -53,9 +53,9 @@ export const products: Product[] = [
     category: "Bob Perruques",
     texture: "Straight",
     basePrice: 110,
-    image: "https://images.unsplash.com/photo-1605497746444-ac9dbd3d4401?auto=format&fit=crop&q=80&w=600",
+    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=600",
     images: [
-      "https://images.unsplash.com/photo-1605497746444-ac9dbd3d4401?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=600",
       "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&q=80&w=600"
     ],
     rating: 4.7,
@@ -123,7 +123,7 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&q=80&w=600",
     images: [
       "https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&q=80&w=600",
-      "https://images.unsplash.com/photo-1595959183075-c1d09e57ad44?auto=format&fit=crop&q=80&w=600"
+      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&q=80&w=600"
     ],
     rating: 4.9,
     reviewsCount: 88,
